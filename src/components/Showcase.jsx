@@ -2,9 +2,9 @@ import { motion } from 'framer-motion'
 
 const logos = [
   'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg',
-  'https://upload.wikimedia.org/wikipedia/commons/9/96/Sass_Logo_Color.svg',
   'https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg',
   'https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg',
+  'https://upload.wikimedia.org/wikipedia/commons/9/96/Sass_Logo_Color.svg',
 ]
 
 const items = [
@@ -28,6 +28,9 @@ const items = [
 export default function Showcase() {
   return (
     <section id="portfolio" className="relative bg-[#0B0B12] py-24 sm:py-32">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -top-24 left-1/2 -translate-x-1/2 h-40 w-[520px] rounded-full bg-cyan-400/20 blur-3xl" />
+      </div>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -44,10 +47,10 @@ export default function Showcase() {
           {items.map((item, i) => (
             <motion.div
               key={item.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20, rotateX: -6 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.5, delay: i * 0.05 }}
+              transition={{ duration: 0.55, delay: i * 0.06 }}
               className="group relative overflow-hidden rounded-2xl bg-white/5 border border-white/10"
             >
               <img src={item.image} alt="" className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105" />

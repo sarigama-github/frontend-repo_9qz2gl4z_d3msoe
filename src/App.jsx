@@ -2,6 +2,9 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Services from './components/Services'
 import Showcase from './components/Showcase'
+import About from './components/About'
+import Process from './components/Process'
+import Testimonials from './components/Testimonials'
 import CTA from './components/CTA'
 
 function App() {
@@ -11,7 +14,10 @@ function App() {
       <main>
         <Hero />
         <Services />
+        <About />
         <Showcase />
+        <Process />
+        <Testimonials />
         <CTA />
       </main>
       <footer className="bg-[#0B0B12] border-t border-white/10">
